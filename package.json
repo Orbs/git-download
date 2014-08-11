@@ -1,0 +1,29 @@
+{
+  "name": "git-download",
+  "version": "0.0.1",
+  "description": "Download a remote git repository as a tar file or exploded directory",
+  "main": "index.js",
+  "dependencies": {
+    "git-wrapper": "^0.1.1",
+    "tar": "^1.0.0",
+    "uuid": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Orbs/git-download.git"
+  },
+  "keywords": [
+    "git",
+    "archive"
+  ],
+  "author": "Tauren Mills",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Orbs/git-download/issues"
+  },
+  "homepage": "https://github.com/Orbs/git-download"
+}
