@@ -7,7 +7,8 @@ var options = {
   // Branch and folder path to include
   branch: 'master',  // 'master:lib'
   // Location to save tarfile, defaults to /tmp if not specified
-  tarfile: '/tmp/node-buffer.tar',
+  // tarfile: '/tmp/node-buffer.tar',
+  tmpDir: '/tmp',
   // Optional prefix to add to all root filenames in tarfile 
   // prefix: 'node-buffer/',
   // Does not remove downloaded tarfile if true, otherwise tarfile is removed

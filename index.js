@@ -3,28 +3,30 @@
 // Used to execute git archive commands such as this:
 // git archive --format=tar --remote=ssh://hostname/~username/reponame.git branch:folder | tar xf -
 
-// Get archive from bitbucket
+// Get archive from bitbucket -- doesn't work with https
 // git archive --format=tar --prefix=alembic/ --remote=ssh://git@bitbucket.org/zzzeek/alembic.git master | tar -xf -
 
 // Ideas on how to do similar with github:
 // http://stackoverflow.com/questions/9609835/git-export-from-github-remote-repository
+
+// Maybe should do git clone, git checkout, git archive (local). This should support both ssh and https
+// and work on bitbucket, stash, github, and any git repo.
 
 var tar = require('tar');
 var fs = require('fs');
 var uuid = require('uuid');
 var Git = require('git-wrapper');
 var git = new Git({});
+var path = require('path');
 
 module.exports = function(options, callback) {
 
   var gitOptions = {
     format: 'tar',
     remote: options.source,
-    output: options.tarfile || '/tmp/'+uuid.v4()+'.tar' 
+    output: options.tarfile || path.join(options.tmpDir || '/tmp', uuid.v4()+'.tar'),
+    prefix: options.prefix || ''
   };
-  if (options.prefix) {
-    gitOptions.prefix = options.prefix;
-  }
 
   // Remove tarfile if savetar option is false, otherwise
   // return path to tarfile

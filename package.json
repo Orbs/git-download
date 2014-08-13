@@ -1,6 +1,6 @@
 {
   "name": "git-download",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Download a remote git repository as a tar file or exploded directory",
   "main": "index.js",
   "dependencies": {
